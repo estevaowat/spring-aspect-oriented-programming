@@ -6,18 +6,26 @@ plugins {
 
 group = 'com.ewcode'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+
 
 repositories {
     mavenCentral()
 }
 
+configurations {
+    antContrib
+    externalLibs
+    deploymentTools
+}
+
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    // implementation 'org.springframework.boot:spring-boot-starter-parent'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation files('libs/security-itau-0.0.1-SNAPSHOT-plain.jar')
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 
 }
 
